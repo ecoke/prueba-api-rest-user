@@ -16,7 +16,7 @@
 
 ![api-rest-1](base.png)
 
-- **Todas las variables de configuración se pueden encontrar en el archivo **
+- **Todas las variables de configuración se pueden encontrar en el archivo**
 - `src/main/resources/application.properties`
 
 ###### Server Config
