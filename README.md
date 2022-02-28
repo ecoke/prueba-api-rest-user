@@ -60,7 +60,7 @@
 ## Propyecto Postman
 
 - El json para importar a Postman se enecuentra en la raíz de este repositorio
-- `postman-api-rest-user.json`
+- `postman-api-rest-user.json
 
 
 ## Autenticar los servicios seguritizados
