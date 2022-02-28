@@ -65,7 +65,7 @@
 ## Autenticar los servicios seguritizados
 
 
-- Para poder ejecutar los servicios eguritizados se debe primero obtener un token ya sea con el servicio de registro o de login
+- Para poder ejecutar los servicios seguritizados se debe primero obtener un token ya sea con el servicio de registro o de login
 - Ese token se debe asignar a la autenticación del resto de servicios que requieren enviar el token, como se muestra en la figura
 
 
@@ -93,7 +93,7 @@
  
 ## Servicios
 
-###### POST - Crear nuevo usuario (No requiere estar logueado)
+###### POST - Crear nuevo usuario (No requiere token)
 
  `http://localhost:8090/api/user/registro`
 
@@ -143,7 +143,7 @@
 		]
 	}
 
-###### POST - Login por email y pass (no requiere estar logeado)
+###### POST - Login por email y pass (no requiere token)
 
 `http://localhost:8090/api/user/login`
 
@@ -180,7 +180,7 @@
 	}
 	
 	
-###### GET - listar todos los usuarios (requiere estar logeado)
+###### GET - listar todos los usuarios (requiere token)
 
 `http://localhost:8090/api/user/list`
 
@@ -202,7 +202,7 @@
 	]
 	
 
-###### POST - Obtener datos usuario existente (requiere estar logeado)
+###### POST - Obtener datos usuario existente (requiere token)
 
 `http://localhost:8090/api/user/get?id=UUID`
 
@@ -237,7 +237,7 @@
 	
 
 
-###### PATCH - Actualizar datos usuario existente (requiere estar logeado)
+###### PATCH - Actualizar datos usuario existente (requiere token)
 
 `http://localhost:8090/api/user/change`
 
@@ -277,7 +277,7 @@
 	}
 
 
-###### DEL - Eliminar un usuario existente (requiere estar logeado)
+###### DEL - Eliminar un usuario existente (requiere token)
 
 `http://localhost:8090/api/user/delete?id=UUID`
 
