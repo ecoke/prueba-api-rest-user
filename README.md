@@ -19,7 +19,7 @@
 - **Todas las variables de configuración se pueden encontrar en el archivo **
 - `src/main/resources/application.properties`
 
-#####Server Config
+###Server Config
 - server.port = 8090
 - server.servlet.context-path = /api
 
