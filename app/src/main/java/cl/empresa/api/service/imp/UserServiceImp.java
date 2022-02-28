@@ -28,7 +28,6 @@ public class UserServiceImp implements UserService {
 		user.setIsactive(true);
 		user.setLast_login(null);
 		user.setModified(user.getCreated());
-		user.setToken(null);
 		return userRepository.save(user);
 	}
 
