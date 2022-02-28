@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "8d5b271d-55f7-4117-80a3-461694bcda0e",
+		"name": "Api REST User Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear nuevo usuario (No requiere estar logueado)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Eduardo Coke\",\r\n  \"email\": \"ejemplo@google.cl\",\r\n  \"password\": \"123456\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"1234567\",\r\n      \"citycode\": \"1\",\r\n      \"contrycode\": \"57\"\r\n    },\r\n    {\r\n      \"number\": \"1234567\",\r\n      \"citycode\": \"1\",\r\n      \"contrycode\": \"57\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/user/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login por email y pass (no requiere estar logeado)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"ejemplo@google.cl\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar todos los usuarios (requiere estar logeado)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhcGktdG9rZW4iLCJzdWIiOiJlamVtcGxvQGdvb2dsZS5jbCIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NDYwMjQxNjAsImV4cCI6MTY0NjA0MjE2MH0.aW7iU639A7hgliwaJSVRosDcywE7Ej1x76LRPYmzMdqhADiPDtk-AdrXr0e7Np3cfZtiUcH6I9hdTATuFUgdHQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener datos usuario existente (requiere estar logeado)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhcGktdG9rZW4iLCJzdWIiOiJlamVtcGxvc0Bnb29nbGUuY2wiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjQ2MDI4NjU4LCJleHAiOjE2NDYwNDY2NTh9.o6VkOBU-h4lOUKOhfYlrFfyLR9sN3eN8PHWLA5ZwTJkQ7laE8XAffBXJGbB3I2kY0FNFhvC3LdAmuN2vCBTEEw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/user/get?id=c0a83801-7f3f-19d1-817f-3f1a0ab30000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "c0a83801-7f3f-19d1-817f-3f1a0ab30000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar datos usuario existente (requiere estar logeado)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhcGktdG9rZW4iLCJzdWIiOiJlamVtcGxvc0Bnb29nbGUuY2wiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjQ2MDI4NjU4LCJleHAiOjE2NDYwNDY2NTh9.o6VkOBU-h4lOUKOhfYlrFfyLR9sN3eN8PHWLA5ZwTJkQ7laE8XAffBXJGbB3I2kY0FNFhvC3LdAmuN2vCBTEEw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":\"c0a83801-7f3f-19d1-817f-3f1a0ab30000\",\r\n    \"name\": \"Eduard Cok\",\r\n    \"email\": \"ejempl@google.cl\",\r\n    \"password\": \"123456\",\r\n    \"isactive\": false\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/user/change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario por id (requiere estar logueado)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhcGktdG9rZW4iLCJzdWIiOiJlamVtcGxvc0Bnb29nbGUuY2wiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjQ2MDI4NjU4LCJleHAiOjE2NDYwNDY2NTh9.o6VkOBU-h4lOUKOhfYlrFfyLR9sN3eN8PHWLA5ZwTJkQ7laE8XAffBXJGbB3I2kY0FNFhvC3LdAmuN2vCBTEEw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/user/delete?id=c0a83801-7f3f-19d1-817f-3f1a0ab30000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "c0a83801-7f3f-19d1-817f-3f1a0ab30000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
