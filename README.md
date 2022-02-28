@@ -57,7 +57,7 @@
 
 
 
-## Propyecto Postman
+## Proyecto Postman
 
 - El json para importar a Postman se enecuentra en la raíz de este repositorio `postman-api-rest-user.json`
 
@@ -284,6 +284,7 @@
 	Input:
 	?id=UUID
 
+	Output:
 	{"message": "Usuario eliminado exitosamente"}
 
 
