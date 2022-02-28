@@ -19,17 +19,17 @@
 - **Todas las variables de configuración se pueden encontrar en el archivo **
 - `src/main/resources/application.properties`
 
-###Server Config
+##Server Config
 - server.port = 8090
 - server.servlet.context-path = /api
 
-#####Data Source Config
+##Data Source Config
 - spring.datasource.url=jdbc:h2:mem:dbusuarios
 - spring.datasource.driverClassName=org.h2.Driver
 - spring.datasource.username=sa
 - spring.datasource.password=
 
-#####JPA & H2 Config  
+##JPA & H2 Config  
 - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
 - spring.jpa.hibernate.ddl-auto= update
 - spring.jpa.defer-datasource-initialization=true
@@ -37,7 +37,7 @@
 - spring.h2.console.enabled=true
 - spring.h2.console.path=/h2-ui
 
-#####JWT Config
+##JWT Config
 - api.jwt.secret=api-evaluacion
 - api.jwt.cookieName=api-token
 
